@@ -1,0 +1,46 @@
+{% extends 'base.html'  %}
+
+{%  block head  %}
+<title>A Form about Yourself</title>
+{%  endblock  %}
+
+{%  block body  %}
+<div class="content">
+    <h1 style="text-align:center">A Form about Yourself</h1>
+    {%  if tasks|length < 1 %}
+    <h4 style="text-align:center"> Describe yourself through this form!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Response</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor  %}
+    </table>
+    {% endif %}
+    <div class="form-inline">
+    <form action="/" method="POST">
+    <h5 style="text-align:center">What is your name?</h5>
+    <input type="text" name="content" id="content">
+    <h5 style="text-align:center">What is your favorite hobby?</h5>
+    <input type="text" name="content" id="content">
+    <h5 style="text-align:center">What is your favorite food?</h5>
+    <input type="text" name="content" id="content">
+    <h5 style="text-align:center">Where would you like to visit?</h5>
+    <input type="text" name="content" id="content">
+    <input type="submit" value="Submit Form">
+    </form>
+    </div>
+</div>
+{%  endblock  %}

@@ -1,0 +1,23 @@
+{% extends 'base.html'  %}
+
+{%  block head  %}
+<title>A Form about Yourself</title>
+{%  endblock  %}
+
+{%  block body  %}
+<div class="content">
+    <h1 style="text-align:center">A Form about Yourself</h1>
+
+    <form action="/update/{{task.id}}" method="POST">
+        <h5 style="text-align:center">What is your name?</h5>
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <h5 style="text-align:center">What is your favorite hobby?</h5>
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <h5 style="text-align:center">What is your favorite food?</h5>
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <h5 style="text-align:center">Where would you like to visit?</h5>
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <input type="submit" value="Update">
+    </form>
+</div>
+{%  endblock  %}
